@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5.1">
+  <PropertyGroup>
+    <SourceRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\..\..\src'))</SourceRoot>
+    <BuildEnvironmentRoot>$(MSBuildThisFileDirectory)</BuildEnvironmentRoot>
+    <BaseIntermediateOutputPath>$([System.IO.Path]::GetFullPath('$(SourceRoot)\..\artifacts\obj\$(MSBuildProjectName)'))</BaseIntermediateOutputPath>
+    <BaseOutputPath>$([System.IO.Path]::GetFullPath('$(SourceRoot)\..\artifacts\bin\$(MSBuildProjectName)'))</BaseOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DebugType>Full</DebugType>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects Condition="'$(AutoGenerateBindingRedirects)' == ''">true</AutoGenerateBindingRedirects>
+    <BuildEnvironmentCommonTargets>$(BuildEnvironmentRoot)\BuildEnvironment.targets</BuildEnvironmentCommonTargets>
+  </PropertyGroup>
+
+</Project>
