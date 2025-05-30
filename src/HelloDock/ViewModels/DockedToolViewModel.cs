@@ -22,7 +22,7 @@ namespace HelloDock.ViewModels
             // If we let all the windows close, we can't get them back. In production, we
             // need to investigate how we'd allow them to be re-opened. For this sample,
             // we just disable closing of the controls.
-            this.CanClose = false;
+            this.CanClose = true;
 
             // These are the defaults, but we set them explicitly for clarity.
             this.CanFloat = true;

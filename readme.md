@@ -16,3 +16,8 @@ Key work for adding Dock.Avalonia to an existing Avalonia app and hosting docked
 1. In the View hosting the Dock control, add
    `<dock:DockControl x:Name="Dock" />`
 1. In the code-behind for the view, assign the layout created by the factory to Dock.Layout.
+
+# Commit history
+1. Simplest possible app I could make with two windows and a bound view.
+1. Demonstrates dynamically adding additional tool windows.
+   - Need to investigate: If all tools are floated, none can be added back to the main window.

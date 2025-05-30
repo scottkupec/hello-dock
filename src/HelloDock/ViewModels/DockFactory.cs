@@ -20,6 +20,8 @@ namespace HelloDock.ViewModels
             this.toolViewModel2 = viewModel2;
         }
 
+        public IDock? Layout { get; private set; }
+
         private IRootDock? rootDock;
 
         public override IRootDock CreateLayout()
@@ -46,7 +48,7 @@ namespace HelloDock.ViewModels
                 ActiveDockable = this.toolViewModel2,
             };
 
-            ProportionalDock layout = new()
+            this.Layout = new ProportionalDock()
             {
                 Orientation = Orientation.Horizontal,
                 VisibleDockables = this.CreateList<IDockable>
@@ -60,9 +62,9 @@ namespace HelloDock.ViewModels
             this.rootDock = this.CreateRootDock();
             this.rootDock.Id = "Root";
             this.rootDock.IsCollapsable = true;
-            this.rootDock.VisibleDockables = [layout];
-            this.rootDock.ActiveDockable = layout;
-            this.rootDock.DefaultDockable = layout;
+            this.rootDock.VisibleDockables = [this.Layout];
+            this.rootDock.ActiveDockable = this.Layout;
+            this.rootDock.DefaultDockable = this.Layout;
 
             return this.rootDock;
         }
